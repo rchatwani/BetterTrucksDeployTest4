@@ -9,7 +9,7 @@ steps:
     - "-c"
     - |
         dotnet publish -c Release
-        cp Dockerfile ./bin/Release/netcoreapp3.1/publish/
+        cp /BetterTrucksDeployTest4/Dockerfile ./bin/Release/netcoreapp3.1/publish/
   dir: 'BetterTrucksDeployTest4/'
 - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
   entrypoint: 'bash'
