@@ -9,11 +9,11 @@ EXPOSE 80
 EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1-nanoserver-1903 AS build
-WORKDIR /BetterTrucksDeployTest4
-COPY ["/BetterTrucksDeployTest4.csproj", "BetterTrucksDeployTest4/"]
-RUN dotnet restore "/BetterTrucksDeployTest4.csproj"
+WORKDIR /src
+COPY ["BetterTrucksDeployTest4/BetterTrucksDeployTest4.csproj", "BetterTrucksDeployTest4/"]
+RUN dotnet restore "BetterTrucksDeployTest4/BetterTrucksDeployTest4.csproj"
 COPY . .
-WORKDIR "/BetterTrucksDeployTest4"
+WORKDIR "/src/BetterTrucksDeployTest4"
 RUN dotnet build "BetterTrucksDeployTest4.csproj" -c Release -o /app/build
 
 #FROM build AS publish
