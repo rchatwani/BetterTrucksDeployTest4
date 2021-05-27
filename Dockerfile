@@ -14,10 +14,10 @@ COPY ["BetterTrucksDeployTest4/BetterTrucksDeployTest4.csproj", "BetterTrucksDep
 RUN dotnet restore "BetterTrucksDeployTest4/BetterTrucksDeployTest4.csproj"
 COPY . .
 WORKDIR "/src/BetterTrucksDeployTest4"
-RUN dotnet build "/src/BetterTrucksDeployTest4.csproj" -c Release -o /app/build
+RUN dotnet build "BetterTrucksDeployTest4/BetterTrucksDeployTest4.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "/src/BetterTrucksDeployTest4.csproj" -c Release -o /app/publish
+RUN dotnet publish "BetterTrucksDeployTest4/BetterTrucksDeployTest4.csproj" -c Release -o /app/publish
 
 FROM base AS final
 WORKDIR /app
