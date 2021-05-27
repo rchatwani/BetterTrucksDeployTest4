@@ -10,7 +10,7 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1-nanoserver-1903 AS build
 WORKDIR /src
-COPY ["BetterTrucksDeployTest4/BetterTrucksDeployTest4.csproj", "BetterTrucksDeployTest4/"]
+COPY ["BetterTrucksDeployTest4.csproj", "BetterTrucksDeployTest4/"]
 RUN dotnet restore "BetterTrucksDeployTest4/BetterTrucksDeployTest4.csproj"
 COPY . .
 WORKDIR "/src/BetterTrucksDeployTest4"

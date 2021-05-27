@@ -10,5 +10,5 @@ steps:
     - |
         dotnet publish -c Release
         cp Dockerfile ./bin/Release/netcoreapp3.1/publish/
-  dir: '/'
+  dir: '/BetterTrucksDeployTest4'
 timeout: '1600s'
