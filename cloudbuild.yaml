@@ -9,8 +9,8 @@ steps:
     - "-c"
     - |
         dotnet publish -c Release
-        cp /BetterTrucksDeployTest4/Dockerfile ./bin/Release/netcoreapp3.1/publish/
-  dir: 'BetterTrucksDeployTest4/'
+        cp Dockerfile ./bin/Release/netcoreapp3.1/publish/
+  dir: '/'
 - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
   entrypoint: 'bash'
   args: ['-c', 'gcloud app deploy ./bin/Release/netcoreapp3.1/publish/app.yaml']
