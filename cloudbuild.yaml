@@ -11,8 +11,4 @@ steps:
         dotnet publish -c Release
         cp Dockerfile ./bin/Release/netcoreapp3.1/publish/
   dir: '/'
-- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
-  entrypoint: 'bash'
-  args: ['-c', 'gcloud app deploy ./bin/Release/netcoreapp3.1/publish/app.yaml']
-  dir: '/'
 timeout: '1600s'
